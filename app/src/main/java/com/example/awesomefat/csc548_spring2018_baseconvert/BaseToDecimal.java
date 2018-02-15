@@ -48,7 +48,7 @@ public class BaseToDecimal extends AppCompatActivity
         }
         this.answerTV.setText("From Octal:  " + tempResult);
     }
-    
+
 
     public void base10ButtonPressed(View v)
     {
