@@ -24,21 +24,74 @@ public class DecimalToBase extends AppCompatActivity
 
     public void base2ButtonPressed(View v)
     {
-        this.answerTV.setText("Base 2");
+       // this.answerTV.setText("Base 2");
+        String s = this.inputET.getText().toString();
+               int iValue = Integer.parseInt(s);
+                String result = "";
+                while(iValue>0)
+                {
+                    int modValue = 0;
+                    modValue = iValue%2;
+                    iValue = iValue/2;
+                    result = modValue + result;
+                }
+                this.answerTV.setText("Binary: " + result);
     }
 
     public void base8ButtonPressed(View v)
     {
-        this.answerTV.setText("Base 8");
+       // this.answerTV.setText("Base 8");
+
+        String s = this.inputET.getText().toString();
+                int iValue = Integer.parseInt(s);
+                String result = "";
+               while(iValue>0)
+               {
+                   int modValue = 0;
+                   modValue = iValue%8;
+                   iValue = iValue/8;
+                   result = modValue + result;
+               }
+               this.answerTV.setText("octal: " + result);
     }
 
     public void base10ButtonPressed(View v)
     {
-        this.answerTV.setText("Base 10");
+        //this.answerTV.setText("Base 10");
+
+              String s = this.inputET.getText().toString();
+                int iValue = Integer.parseInt(s);
+                String result = "";
+                while(iValue>0)
+                {
+                    int modValue = 0;
+                    modValue = iValue%10;
+                    iValue = iValue/10;
+                    result = modValue + result;
+                }
+                this.answerTV.setText("Decimal: " + result);
     }
 
     public void base16ButtonPressed(View v)
     {
-        this.answerTV.setText("Base 16");
+        //this.answerTV.setText("Base 16");
+
+                String s = this.inputET.getText().toString();
+                int iValue = Integer.parseInt(s);
+                String result = "";
+                char[] charArray = {'A', 'B', 'C', 'D', 'E', 'F'};
+                while(iValue>0)
+                {
+                    int modValue = 0;
+                    modValue = iValue%16;
+                    iValue = iValue/16;
+                    if(modValue>9){
+                        result = charArray[modValue - 10] + result;
+                    } else {
+                        result = modValue + result;
+                    }
+                }
+                this.answerTV.setText("Hexadecimal: " + result);
+
     }
 }
